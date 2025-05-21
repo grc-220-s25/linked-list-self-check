@@ -1,3 +1,5 @@
+
+
 public class Check {
     /**
      * Given the head of a linked list, return whether there are more even or 
@@ -12,6 +14,24 @@ public class Check {
      * @return "even", "odd", or "equal" depending on whether there are more even or odd values
      */
     public static String evenOdd(ListNode head) {
-        return null;
+
+        int even =0;
+        int odds = 0;
+        ListNode current = head;
+
+        while (current != null) { 
+            if (current.data % 2 == 0){
+                even++;
+                
+            }else
+            {
+                odds++;
+            }
+            current = current.next;
+        }
+        if (even == odds){
+            return "equal";
+        }else if (even > odds) return "even";
+        return "odd";
     }
 }
